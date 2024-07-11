@@ -19,4 +19,11 @@ public class gitcontroller {
         }
         return "data received: " + data;
     }
+
+    //created this method to check changes that i have made means i created this method on local repository reflects or not on remote repository i.e github
+    @GetMapping("/welcome")
+    public String welcome()
+    {
+        return "welcome";
+    }
 }
