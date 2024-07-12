@@ -1,5 +1,6 @@
 package com.example.git_demo.controller;
 
+import com.example.git_demo.order;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -28,10 +29,10 @@ public class gitcontroller {
 
     //adding this comment to check whether remote changes reflects in local repo or not
 
-    @PostMapping("/purchase/{userName}/{amount}/{productName}")
-    public String purchase(@PathVariable String userName, @PathVariable double amount, @PathVariable String productName)
+    @PostMapping("/purchase")
+    public String purchase(@RequestBody order order)
     {
-        return "Hi " + userName + " order for " + productName + " with amount " + amount + " stored successfully...";
+        return "Hi " + order.getUsername() + " order for " +order.getProductName()  + " with amount " + order.getAmount() + " stored successfully...";
     }
 
 }
