@@ -26,12 +26,12 @@ public class gitcontroller {
 
 
 
+    //adding this comment to check whether remote changes reflects in local repo or not
+
     @PostMapping("/purchase/{userName}/{amount}/{productName}")
     public String purchase(@PathVariable String userName, @PathVariable double amount, @PathVariable String productName)
     {
         return "Hi " + userName + " order for " + productName + " with amount " + amount + " stored successfully...";
     }
-
-    //adding this comment to check whether remote changes reflects in local repo or not 
 
 }
