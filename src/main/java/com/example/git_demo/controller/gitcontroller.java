@@ -1,8 +1,6 @@
 package com.example.git_demo.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class gitcontroller {
@@ -22,8 +20,14 @@ public class gitcontroller {
 
     //created this method to check changes that i have made means i created this method on local repository reflects or not on remote repository i.e github
     @GetMapping("/welcome")
-    public String welcome()
-    {
+    public String welcome() {
         return "welcome";
+    }
+
+
+    @PostMapping("/purchase/{userName}/{amount}/{productName}")
+    public String purchase(@PathVariable String userName, @PathVariable double amount, @PathVariable String productName)
+    {
+        return "Hi " + userName + " order for " + productName + " with amount " + amount + " stored successfully...";
     }
 }
